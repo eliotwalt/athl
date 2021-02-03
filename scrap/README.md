@@ -18,16 +18,17 @@ optional arguments:
   --dest DEST      path to chromedriver exectuable. defaults to `data/ch/`.
 
 ```
-To use default arguments, create a `data/` directory at the same level as `ch_scrap.py` and `fr_scrap.py`. Within `data/` create `ch/` and `fr/` folders.
+To use default arguments, create a `data/` directory at the root of the directory.
 ```
-scrap/
-\_ chromedriver
-\_ ch_scrap.py
-\_ (fr_scrap.py)
-\_ [...]
+/
 \_ data/
     \_ ch/
     \_fr/
+\_ scrap/
+    \_ chromedriver
+    \_ ch_scrap.py
+    \_ (fr_scrap.py)
+    \_ [...]
 ```
 Then, run the script specifying arguments if necessary:
 ```bash
