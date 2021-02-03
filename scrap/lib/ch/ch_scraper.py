@@ -53,6 +53,9 @@ class ChScraper:
         self.submit_button = submit_button
         self.dest = dest
 
+        self.sleep_time = 0.12
+        self.max_retries = 6
+
         driver_path = os.path.join('.', driver_path)
 
         chrome_options = Options()  
@@ -63,7 +66,7 @@ class ChScraper:
         print('\nConnecting ...\n')
         self.driver = webdriver.Chrome(executable_path=driver_path, options=chrome_options)
 
-    def get_form(self):
+    def to_iframe(self, url):
 
         '''
         ChSraper.get_form(self)
@@ -71,16 +74,36 @@ class ChScraper:
         connects driver to self.url to get the form
         '''
 
-        self.driver.get(self.url)
-        try: 
-            iframe = WebDriverWait(self.driver, 10).until(
-                EC.presence_of_element_located((By.ID, "alabusContentIframe"))
-            )
-            self.driver.switch_to.frame(iframe)
-            time.sleep(0.1)
-        except:
-            self.driver.quit()  
-            sys.exit()
+        self.driver.get(url)
+        iframe = WebDriverWait(self.driver, 10).until(
+            EC.presence_of_element_located((By.ID, "alabusContentIframe"))
+        )
+        self.driver.switch_to.frame(iframe)
+
+    def rows_to_df(self, rows, col_names):
+
+        '''
+        ChScraper.row_to_df(self, rows, col_names)
+
+        add rows to a pandas dataframe and return it
+
+        inputs:
+        - rows: Content of a table
+        - col_names: Columns names of the table
+
+        outputs:
+        - job_df: dataframe containing the rows
+        '''
+
+        job_df = pd.DataFrame.from_dict({
+            coln: {
+                idx: None for idx in range(len(rows))
+            } for coln in col_names
+        })
+        for idx, row in enumerate(rows):
+            job_df.loc[idx] = row
+        
+        return job_df
 
     def set_table(self, job):
 
@@ -105,7 +128,7 @@ class ChScraper:
         - 0: if some field could not be filled according to job
         '''
 
-        self.get_form()
+        self.to_iframe(self.url)
         print(f'{job["id"]}: Connection established')
         
         print(f'{job["id"]}: Filling form')
@@ -116,18 +139,17 @@ class ChScraper:
                 try:
                     id_selector = self.driver.find_element_by_id(field_id)
                     id_selector.click()
-                    time.sleep(0.1)
+                    time.sleep(self.sleep_time)
                     value_selector = self.driver.find_element_by_id(field_value)
                     value_selector.click()
-                    time.sleep(0.1)
+                    time.sleep(self.sleep_time)
                 except:
                     print(f'{job["id"]}: {field} not found')
                     return 0
 
-        # Get Button
         button = self.driver.find_element_by_id(self.submit_button)
         button.click()
-        time.sleep(0.2)
+        time.sleep(self.sleep_time)
 
         print(f'{job["id"]}: Form submitted.')
 
@@ -166,17 +188,15 @@ class ChScraper:
 
         for discipline in self.jobs.keys():
             for category in self.jobs[discipline].keys():
-
                 df = pd.DataFrame()
                 i = 0
                 while i < len(self.jobs[discipline][category]):
-                    job = self.jobs[discipline][category][i]
+                    job = self.jobs[discipline][category][i]                    
                     try:
                         status = self.set_table(job)
-
                         if not status:
                             k = 0
-                            while k < 6 and not status:
+                            while k < self.max_retries and not status:
                                 print(f'{job["id"]}: Retrying ...')
                                 status = self.set_table(job)
                                 k += 1
@@ -184,44 +204,36 @@ class ChScraper:
                                 print(f'{job["id"]}: Could not access table. skip job')
                                 i += 1
                                 continue
-                        
-                        self.driver.get(self.driver.current_url)
-                        # try:
-                        iframe = WebDriverWait(self.driver, 10).until(
-                        EC.presence_of_element_located((By.ID, "alabusContentIframe"))
-                        )
-                        self.driver.switch_to.frame(iframe)
-                        time.sleep(0.1)
-                        # except:
-                        #     self.driver.quit()  
-                        #     sys.exit()
+
+                        self.to_iframe(self.driver.current_url)
                         print(f'{job["id"]}: Table loaded')
 
                         tr_tags = self.driver.find_elements_by_tag_name('tr')
-                        rows = list(tr_tags)[1:]
-
-                        col_names = tr_tags[0].text.split()[1:]
+                        pos = tr_tags[0].text.find("naiss")
+                        t = tr_tags[0].text[:pos-1]+'_'+tr_tags[0].text[pos:]
+                        col_names = t.split()[1:]
                         col_names.extend(['discipline', 'catégorie'])
-                        job_df = pd.DataFrame.from_dict({
-                            coln: {
-                                idx: None for idx in range(len(rows))
-                            } for coln in col_names
-                        })
-                        for idx, row_obj in enumerate(rows):
-                            row = self.get_row(row_obj, idx, len(rows), job["id"])
+
+                        rows = []                        
+                        for idx, row_obj in enumerate(tr_tags[1:]):
+                            row = self.get_row(row_obj, idx, len(tr_tags[1:]), job["id"])
                             row.extend([discipline, category])
-                            # try:
-                            job_df.loc[idx] = row
-                            # except ValueError:
-                            #     print(f'ValueError when adding row to df: {row}')
+                            rows.append(row)
+
+                        rows = [r for r in rows if len(r)==len(col_names)]
+                        if len(rows)==0:
+                            raise RuntimeError("")
+                        
+                        job_df = self.rows_to_df(rows, col_names)                        
+                        df = pd.concat([df, job_df]).reset_index(drop=True)
+
                         print('\n')
                         i += 1
                     except KeyboardInterrupt:
                         sys.exit()
                     except:
                         print(f'{job["id"]}: An error occured. Retrying ...')
-
-                    df = pd.concat([df, job_df]).reset_index(drop=True)
+                        continue          
 
                 if not os.path.isdir(os.path.join(self.dest, os.path.join(discipline))):
                     os.mkdir(os.path.join(self.dest, os.path.join(discipline)))
