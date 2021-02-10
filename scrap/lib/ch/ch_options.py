@@ -5,6 +5,12 @@ class ChOptions:
 
     def __init__(self, config):
 
+        '''
+        ChOptions.__init__(self, config)
+
+        constructor
+        '''
+
         self.config = config
         self.url = self.config.url
         self.submit_button = self.config.submit_button
@@ -57,18 +63,30 @@ class ChOptions:
 
     def get_parser(self):
 
+        '''
+        ChOptions.get_parser(self)
+
+        build argument parser
+        '''
+
         athl_root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
 
         p = argparse.ArgumentParser()
 
         p.add_argument('--driver', type=self.file_path, required=False, default='chromedriver',
-                       help='path to chromedriver exectuable')
+                       help='path to chromedriver exectuable. defaults to `./chromedriver`')
         p.add_argument('--dest', type=self.dir_path, required=False, default=os.path.join(athl_root, os.path.join('data', 'ch')),
-                       help='path to chromedriver exectuable')
+                       help='path to chromedriver exectuable. defaults to `data/ch/`.')
 
         return p
 
     def format_config(self):
+
+        ''' 
+        ChOptions.format_config(self)
+
+        Reformat configuration file into a list of distinct scraping jobs
+        '''
 
         disciplines = self.config.disciplines
         categories = ['H', 'F']

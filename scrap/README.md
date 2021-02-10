@@ -20,7 +20,7 @@ optional arguments:
 ```
 To use default arguments, create a `data/` directory at the root of the directory.
 ```
-/
+athl/
 \_ data/
     \_ ch/
     \_fr/

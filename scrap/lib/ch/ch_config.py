@@ -17,6 +17,7 @@ season = f'{prefix}Season_0'
 men_category = f'{prefix}Category_1'
 women_category = f'{prefix}Category_2'
 list_type = f'{prefix}Type_1' # 1 result per athlet
+# list_type = f'{prefix}Type_0' # all results
 max_res = f'{prefix}Tops_4' # 5000 results
 submit_button = 'form_anonym:loadDataBtn'
 disciplines = ['800',

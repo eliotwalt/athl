@@ -53,14 +53,14 @@ class ChScraper:
         self.submit_button = submit_button
         self.dest = dest
 
-        self.sleep_time = 0.12
-        self.max_retries = 6
+        self.sleep_time = 0.15
+        self.max_retries = 7
 
         driver_path = os.path.join('.', driver_path)
 
         chrome_options = Options()  
         chrome_options.add_argument("--headless")
-        chrome_options.add_argument("--window-size=1920,1080")
+        chrome_options.add_argument("--window-size=900,1200")
         chrome_options.add_argument("--log-level=3")
 
         print('\nConnecting ...\n')
@@ -71,7 +71,10 @@ class ChScraper:
         '''
         ChSraper.get_form(self)
 
-        connects driver to self.url to get the form
+        load hidden iframe in the url
+
+        inputs:
+        - url: url of the page in which to load the iframe
         '''
 
         self.driver.get(url)
@@ -95,11 +98,13 @@ class ChScraper:
         - job_df: dataframe containing the rows
         '''
 
+        # Build empty dataframe to store the rows
         job_df = pd.DataFrame.from_dict({
             coln: {
                 idx: None for idx in range(len(rows))
             } for coln in col_names
         })
+        # Loop over the rows and fill the dataframe
         for idx, row in enumerate(rows):
             job_df.loc[idx] = row
         
@@ -127,19 +132,19 @@ class ChScraper:
         - 1: if success
         - 0: if some field could not be filled according to job
         '''
-
-        self.to_iframe(self.url)
-        print(f'{job["id"]}: Connection established')
         
         print(f'{job["id"]}: Filling form')
 
+        # loop over form items and select according to the job
         for field, k in job.items():
             if field != 'id' and field != 'season':
                 field_id, field_value = k
                 try:
+                    # select drop down list
                     id_selector = self.driver.find_element_by_id(field_id)
                     id_selector.click()
                     time.sleep(self.sleep_time)
+                    # select individual value
                     value_selector = self.driver.find_element_by_id(field_value)
                     value_selector.click()
                     time.sleep(self.sleep_time)
@@ -147,11 +152,12 @@ class ChScraper:
                     print(f'{job["id"]}: {field} not found')
                     return 0
 
+        # Submit form
         button = self.driver.find_element_by_id(self.submit_button)
         button.click()
         time.sleep(self.sleep_time)
 
-        print(f'{job["id"]}: Form submitted.')
+        print(f'{job["id"]}: Form submitted')
 
         return 1
 
@@ -172,6 +178,7 @@ class ChScraper:
         - row values in a list
         '''
 
+        # extract the values of the columns in the row webdriver object
         res = row_obj.find_elements_by_tag_name('td')
         print(f'{job_id}: {index+1}/{max_index} rows', end='\r')
 
@@ -184,46 +191,65 @@ class ChScraper:
 
         execute all the jobs in self.jobs, stores the results in pandas
         dataframes and writes to csv
+
+        One dataframe per discipline and per category is produced.
         '''
 
+        # Loop over disciplines
         for discipline in self.jobs.keys():
+            # Loop over categories
             for category in self.jobs[discipline].keys():
+                # Instantiate empty dataframe for the discipline / category data
                 df = pd.DataFrame()
+                # Loop over jobs
                 i = 0
                 while i < len(self.jobs[discipline][category]):
-                    job = self.jobs[discipline][category][i]                    
+                    job = self.jobs[discipline][category][i]
+                    # Execute the job. Avoid time outs by retry
                     try:
+                        # Load iFrame
+                        self.to_iframe(self.url)
+                        print(f'{job["id"]}: Connection established')
+                        # Fill and submit the form
                         status = self.set_table(job)
+                        # Retrty if the form could not be successfully submitted
                         if not status:
                             k = 0
                             while k < self.max_retries and not status:
                                 print(f'{job["id"]}: Retrying ...')
                                 status = self.set_table(job)
                                 k += 1
+                            # Skip job if could not access table in `max_retries` tries
                             if not status:
                                 print(f'{job["id"]}: Could not access table. skip job')
                                 i += 1
                                 continue
 
+                        # Load iFrame
                         self.to_iframe(self.driver.current_url)
                         print(f'{job["id"]}: Table loaded')
 
+                        # Select table elements inside the page source code
                         tr_tags = self.driver.find_elements_by_tag_name('tr')
+                        # Reunite `date` and `naiss.` column names
                         pos = tr_tags[0].text.find("naiss")
                         t = tr_tags[0].text[:pos-1]+'_'+tr_tags[0].text[pos:]
+                        # list column names
                         col_names = t.split()[1:]
                         col_names.extend(['discipline', 'catégorie'])
-
-                        rows = []                        
+                        # loop over rows and scrap content
+                        rows = []
                         for idx, row_obj in enumerate(tr_tags[1:]):
                             row = self.get_row(row_obj, idx, len(tr_tags[1:]), job["id"])
                             row.extend([discipline, category])
                             rows.append(row)
-
                         rows = [r for r in rows if len(r)==len(col_names)]
+                        # Raise error if the result is empty. This is due to a timing error
+                        # that we fix by retrying the job
                         if len(rows)==0:
                             raise RuntimeError("")
                         
+                        # Build dataframe and add it to main dataframe
                         job_df = self.rows_to_df(rows, col_names)                        
                         df = pd.concat([df, job_df]).reset_index(drop=True)
 
@@ -232,9 +258,11 @@ class ChScraper:
                     except KeyboardInterrupt:
                         sys.exit()
                     except:
+                        # An error occured, retry ...
                         print(f'{job["id"]}: An error occured. Retrying ...')
-                        continue          
+                        continue        
 
+                # Save dataframe to csv
                 if not os.path.isdir(os.path.join(self.dest, os.path.join(discipline))):
                     os.mkdir(os.path.join(self.dest, os.path.join(discipline)))
                 df.to_csv(os.path.join(self.dest, os.path.join(discipline, f'{category}.csv')), index=False)
