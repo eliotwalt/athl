@@ -58,10 +58,10 @@ Résultat,Rang,Nom,Société,Nat.,Date_naiss.,Compétition,Lieu,Date,discipline,
 32:00.83,3f1,Christoph Hofmann,TV Länggasse Bern,SUI,20.03.1973,Nat. Auffahrtsmeeting mit 10000m SM,Langenthal,17.05.2007,10000,H
 32:02.29,4f1,Stefan Müller,TV Reussbühl LA,SUI,03.02.1981,Nat. Auffahrtsmeeting mit 10000m SM,Langenthal,17.05.2007,10000,H
 32:21.09,1,Marcel Tschopp,TV Schaan / Leichtathletik,SUI,28.04.1974,Voralbergische Langstreckenmeisterschaften,Götzis,29.04.2007,10000,H
-32:50.85,2f1,Florian Sturny,LAT Sense (Lauf und Athletikteam),SUI,21.01.1982,Freiburger Meisterschaften 5000m und 10000m und Vo,Murten,25.08.2007,10000,H
+32:50.85,2r5,Florian Sturny,LAT Sense (Lauf und Athletikteam),SUI,21.01.1982,Freiburger Meisterschaften 5000m und 10000m und Vo,Murten,25.08.2007,10000,H
 33:05.19,5f1,Beat Blättler,LAC TV Unterstrass Zürich,SUI,19.02.1976,Nat. Auffahrtsmeeting mit 10000m SM,Langenthal,17.05.2007,10000,H
 33:29.13,2,Jonathan Stampanoni,USC Capriaschese-Atletica,SUI,30.11.1970,C T. 10000 M - 3000 W,Tesserete,25.04.2007,10000,H
-33:33.14,3f1,Erich Huber,LAT Sense (Lauf und Athletikteam),SUI,15.08.1981,Freiburger Meisterschaften 5000m und 10000m und Vo,Murten,25.08.2007,10000,H
+33:33.14,4r5,Erich Huber,LAT Sense (Lauf und Athletikteam),SUI,15.08.1981,Freiburger Meisterschaften 5000m und 10000m und Vo,Murten,25.08.2007,10000,H
 33:43.79,6f1,Adrian Stucki,KTV Altendorf,SUI,18.10.1987,Nat. Auffahrtsmeeting mit 10000m SM,Langenthal,17.05.2007,10000,H
 34:14.72,3,Michele Salinetti,SAM Massagno,ITA,10.01.1972,C T. 10000 M - 3000 W,Tesserete,25.04.2007,10000,H
 34:18.18,6r5,Claude Nicolet,CA Gibloux Farvagny,SUI,18.06.1967,Freiburger Meisterschaften 5000m und 10000m und Vo,Murten,25.08.2007,10000,H
@@ -74,7 +74,7 @@ Résultat,Rang,Nom,Société,Nat.,Date_naiss.,Compétition,Lieu,Date,discipline,
 35:20.94,1,Albert Anderegg,STB Leichtathletik,SUI,16.06.1945,Int. Sri Chinmoy Masters Games,Zürich,08.07.2007,10000,H
 35:38.35,8f1,Sandro Jöri,"STV Alpnach, LAGr",SUI,24.05.1985,Nat. Auffahrtsmeeting mit 10000m SM,Langenthal,17.05.2007,10000,H
 35:55.57,1,Robert Stuber,Biberist aktiv! Leichtathletik,SUI,05.09.1955,Int. Sri Chinmoy Masters Games,Zürich,08.07.2007,10000,H
-35:58.62,11r5,Patrick Pochon,SA Bulle,SUI,07.10.1961,Freiburger Meisterschaften 5000m und 10000m und Vo,Murten,25.08.2007,10000,H
+35:58.62,4f1,Patrick Pochon,SA Bulle,SUI,07.10.1961,Freiburger Meisterschaften 5000m und 10000m und Vo,Murten,25.08.2007,10000,H
 36:23.63,13,Harry Huber,SEP Olympic La Chaux-de-Fonds,SUI,11.05.1955,"Offene FL-, SGALV-, IBL-Langstreckenmeisterschafte",Schaan FL,29.08.2007,10000,H
 36:31.95,5,Alain Testorelli,USC Capriaschese-Atletica,SUI,15.05.1971,C T. 10000 M - 3000 W,Tesserete,25.04.2007,10000,H
 36:58.28,4r4,Gilles Barras,CA Gibloux Farvagny,SUI,01.01.1961,Freiburger Meisterschaften 5000m und 10000m und Vo,Murten,25.08.2007,10000,H
@@ -315,42 +315,23 @@ Résultat,Rang,Nom,Société,Nat.,Date_naiss.,Compétition,Lieu,Date,discipline,
 37:16.48,2,Davide Vassalli,GAB Bellinzona,SUI,03.08.1979,CT assoluti 3000F + 10000M,Locarno,18.09.2013,10000,H
 39:02.30,D,Ueli Küttel,LC Luzern,SUI,14.02.1986,Iaum world challenge,Lodi,21.07.2013,10000,H
 57:07.30,D,Pino Pilotto,LC Luzern,SUI,17.05.1952,Iaum world challenge,Lodi,21.07.2013,10000,H
-29:40.20,1r1,Bruno Albuquerque,BTV Aarau Athletics,POR,10.01.1989,SM 10'000m,Brugg,25.06.2013,10000,H
-29:44.57,3r1,Christian Kreienbühl,TV Oerlikon,SUI,06.06.1981,SM 10'000m,Brugg,25.06.2013,10000,H
-29:52.22,4r1,Oqubit Berhane,LC Fortuna Oberbaselbiet,ERI,02.09.1978,SM 10'000m,Brugg,25.06.2013,10000,H
-29:54.47,5r1,Nesero Kadi,BTV Aarau Athletics,ETH,20.05.1986,SM 10'000m,Brugg,25.06.2013,10000,H
-30:03.49,20,Adrian Lehmann,LV Langenthal,SUI,06.12.1989,European Cup 10000m,Pravets,08.06.2013,10000,H
-30:26.86,12,Marcel Berni,TV Länggasse Bern,SUI,05.06.1988,LoopGala Tartlétos,Wageningen,06.06.2013,10000,H
-30:33.10,8r1,Neil Burton,LC Basel,GBR,21.11.1982,SM 10'000m,Brugg,25.06.2013,10000,H
-30:42.55,9r1,Alexandre Roch,Stade Genève,SUI,28.03.1986,SM 10'000m,Brugg,25.06.2013,10000,H
-30:51.28,10r1,Christian Mathys,Biel/Bienne Athletics,SUI,13.03.1987,SM 10'000m,Brugg,25.06.2013,10000,H
-31:08.75,11r1,Ulisses Joos,BTV Chur Leichtathletik,SUI,17.08.1985,SM 10'000m,Brugg,25.06.2013,10000,H
-31:09.08,12r1,Fabian Downs,LC Brühl Leichtathletik,SUI,12.03.1986,SM 10'000m,Brugg,25.06.2013,10000,H
-31:09.18,13r1,Fabian Kuert,LV Langenthal,SUI,03.09.1983,SM 10'000m,Brugg,25.06.2013,10000,H
-31:11.20,14r1,Johannes Morgenthaler,GG Bern,SUI,30.01.1979,SM 10'000m,Brugg,25.06.2013,10000,H
-31:44.61,4,Pascal Ungersböck,SA Bulle,SUI,25.06.1994,10'000m AUT - Meisterschaften,vILLACH,01.05.2013,10000,H
-31:46.84,15r1,Lukas Oldani,Laufsportverein Basel,SUI,02.06.1980,SM 10'000m,Brugg,25.06.2013,10000,H
-31:50.56,16r1,Patrik Wägeli,LC Frauenfeld,SUI,01.01.1991,SM 10'000m,Brugg,25.06.2013,10000,H
-31:54.29,17r1,Christian Ackeret,LV Langenthal,SUI,28.06.1988,SM 10'000m,Brugg,25.06.2013,10000,H
-31:57.44,18r1,Rubén Oliver,TV Oerlikon,SUI,15.05.1976,SM 10'000m,Brugg,25.06.2013,10000,H
-31:59.61,19r1,Lutz Körner,TV Oerlikon,GER,25.05.1978,SM 10'000m,Brugg,25.06.2013,10000,H
-32:14.03,20r1,Alain Mc Laren,Stade Genève,SUI,27.05.1985,SM 10'000m,Brugg,25.06.2013,10000,H
-32:29.81,1r2,Samuel Keller,BTV Chur Leichtathletik,SUI,30.04.1992,SM 10'000m,Brugg,25.06.2013,10000,H
-32:34.99,2r2,Pascal Bucher,LC Regensdorf,SUI,08.05.1989,SM 10'000m,Brugg,25.06.2013,10000,H
-32:36.11,1,Erich Huber,LAT Sense (Lauf und Athletikteam),SUI,15.08.1981,Soirée Populaire sur Piste,Bulle,23.08.2013,10000,H
-32:43.50,3r2,Milyon Layne Habtemariam,LC Fortuna Oberbaselbiet,ERI,31.01.1995,SM 10'000m,Brugg,25.06.2013,10000,H
-33:21.55,5r2,Armin Flückiger,SC Diemberg,SUI,03.12.1990,SM 10'000m,Brugg,25.06.2013,10000,H
-33:27.16,6r2,Urs Schönholzer,STB Leichtathletik,SUI,31.07.1972,SM 10'000m,Brugg,25.06.2013,10000,H
-34:19.59,1,Stéphane Heiniger,US Yverdon,SUI,24.03.1979,Soirée Populaire de course à pied,Yverdon-les-Bains,18.09.2013,10000,H
-34:25.04,4,Florian Sturny,LAT Sense (Lauf und Athletikteam),SUI,21.01.1982,Soirée Populaire sur Piste,Bulle,23.08.2013,10000,H
-34:44.38,2,Michele Paonne,TV Schaan / Leichtathletik,ITA,23.11.1987,Int ASVÖ Eröffnungsmeeting,Götzis,27.04.2013,10000,H
-35:14.44,8r2,Ueli Bieler,TV Oerlikon,SUI,17.11.1980,SM 10'000m,Brugg,25.06.2013,10000,H
-35:49.40,11,Hansjörg Brücker,Vom Stein Baden,SUI,16.11.1963,18. Internationale Sri Chinmoy Masters Games,Zürich,30.06.2013,10000,H
-35:50.90,5,Denis Bigler,AC Murten,SUI,03.11.1969,Soirée Populaire sur Piste,Bulle,23.08.2013,10000,H
-36:39.04,12r2,Luca Foglia,VIRTUS Locarno,SUI,13.04.1962,SM 10'000m,Brugg,25.06.2013,10000,H
-37:16.48,2,Davide Vassalli,GAB Bellinzona,SUI,03.08.1979,CT assoluti 3000F + 10000M,Locarno,18.09.2013,10000,H
-39:02.30,D,Ueli Küttel,LC Luzern,SUI,14.02.1986,Iaum world challenge,Lodi,21.07.2013,10000,H
-57:07.30,D,Pino Pilotto,LC Luzern,SUI,17.05.1952,Iaum world challenge,Lodi,21.07.2013,10000,H
+29:01.58,12,Rolf Rüfenacht,TSV Düdingen,SUI,28.08.1984,Payton Jordan Cardinal Invitational,Stanford,04.05.2014,10000,H
+29:05.62,1,Tadesse Abraham,LC Uster,SUI,12.08.1982,"Laufsportabend Uster-Running 3000m Steeple, 800m,",Uster,27.06.2014,10000,H
+30:04.60,3,Abraham Eshak,GAB Bellinzona,ERI,20.05.1985,"Laufsportabend Uster-Running 3000m Steeple, 800m,",Uster,27.06.2014,10000,H
+30:05.13,5,Julien Wanders,Stade Genève,SUI,18.03.1996,DM 10'000 m,Aichach,03.05.2014,10000,H
+30:38.27,5,Michael Ott,LAC TV Unterstrass Zürich,SUI,22.03.1982,"Laufsportabend Uster-Running 3000m Steeple, 800m,",Uster,27.06.2014,10000,H
+30:41.15,6,Fabian Downs,LC Brühl Leichtathletik,SUI,12.03.1986,"Laufsportabend Uster-Running 3000m Steeple, 800m,",Uster,27.06.2014,10000,H
+30:53.34,9,Rubén Oliver,TV Oerlikon,SUI,15.05.1976,"Laufsportabend Uster-Running 3000m Steeple, 800m,",Uster,27.06.2014,10000,H
+31:26.92,11,Fabian Jucker,LV Winterthur,SUI,18.08.1992,"Laufsportabend Uster-Running 3000m Steeple, 800m,",Uster,27.06.2014,10000,H
+31:31.53,14,Manu Sassi,CS 13 Etoiles,SUI,10.04.1988,"Laufsportabend Uster-Running 3000m Steeple, 800m,",Uster,27.06.2014,10000,H
+31:53.44,15,Ulisses Joos,BTV Chur Leichtathletik,SUI,17.08.1985,"Laufsportabend Uster-Running 3000m Steeple, 800m,",Uster,27.06.2014,10000,H
+32:00.83,16,Florian Suter,TV Thalwil,SUI,17.04.1993,"Laufsportabend Uster-Running 3000m Steeple, 800m,",Uster,27.06.2014,10000,H
+33:41.92,2r1,Erich Huber,LAT Sense (Lauf und Athletikteam),SUI,15.08.1981,Soirée Populaire sur piste,Bulle,22.08.2014,10000,H
+34:02.25,19,Laurent Schenkel,LC Therwil,SUI,25.12.1994,"Laufsportabend Uster-Running 3000m Steeple, 800m,",Uster,27.06.2014,10000,H
+34:21.61,5r1,Jérôme Epiney,CA Marly,SUI,08.04.1993,Soirée Populaire sur piste,Bulle,22.08.2014,10000,H
+34:29.61,6r1,Florian Sturny,LAT Sense (Lauf und Athletikteam),SUI,21.01.1982,Soirée Populaire sur piste,Bulle,22.08.2014,10000,H
+38:23.22,D,Cédric Bouele,CA Delémont,SUI,08.11.1985,31. Internationaler Läuferzehnkampf,Kapfenberg,01.06.2014,10000,H
+52:21.26,2,Christian Vetsch,LC Brühl Leichtathletik,SUI,03.01.1934,19th European Veterans Athletics Championships,"Izmir, TUR",24.08.2014,10000,H
 28:41.37,4,Tadesse Abraham,LC Uster,SUI,12.08.1982,19th European Cup 10'000m,Chia/Pula,06.06.2015,10000,H
 30:10.35,12,Julien Wanders,Stade Genève,SUI,18.03.1996,Championnats de France du 10 000 m,Saint Maur des Fosses,29.04.2015,10000,H
 30:24.58,1,Adrian Lehmann,LV Langenthal,SUI,06.12.1989,Schweizer Meisterschaften 10'000m + Steeple,Langenthal,13.06.2015,10000,H
@@ -456,27 +437,22 @@ Résultat,Rang,Nom,Société,Nat.,Date_naiss.,Compétition,Lieu,Date,discipline,
 39:34.24,31,Luca Foglia,VIRTUS Locarno,SUI,13.04.1962,CT giovanili di staffette,Locarno,21.04.2018,10000,H
 40:16.21,D,Cédric Bouele,Delémont Athlétisme,SUI,08.11.1985,35th International Runners Decathlon,Winterlingen,13.05.2018,10000,H
 42:07.31,D,Ueli Küttel,LC Luzern,SUI,14.02.1986,35th International Runners Decathlon,Winterlingen,13.05.2018,10000,H
-28:07.15,3,Julien Wanders,Stade Genève,SUI,18.03.1996,IAAF Diamond League,"Oslo, NOR",07.06.2018,10000,H
-29:39.65,21,Sullivan Brunet,Stade Genève,SUI,06.03.1988,Night of the 10'000m,London,19.05.2018,10000,H
-30:08.29,26,Christian Kreienbühl,TV Oerlikon,SUI,06.06.1981,Night of the 10'000m,London,19.05.2018,10000,H
-30:13.94,27,Patrik Wägeli,LC Frauenfeld,SUI,01.01.1991,Night of the 10'000m,London,19.05.2018,10000,H
-30:15.70,1,Neil Burton,LC Basel,GBR,21.11.1982,CS 10'000m et 3'000m steeple,Delémont,05.05.2018,10000,H
-30:16.16,2,Fabian Kuert,LV Langenthal,SUI,03.09.1983,CS 10'000m et 3'000m steeple,Delémont,05.05.2018,10000,H
-30:28.76,3,Andreas Kempf,TSV Düdingen,SUI,16.05.1988,CS 10'000m et 3'000m steeple,Delémont,05.05.2018,10000,H
-31:14.20,,Florian Lussy,LA Nidwalden,SUI,15.01.1994,Conference USA Outdoor,"Houston, TX",11.05.2018,10000,H
-31:14.41,4,Christian Mathys,Biel/Bienne Athletics,SUI,13.03.1987,CS 10'000m et 3'000m steeple,Delémont,05.05.2018,10000,H
-31:40.70,5,Lukas Marti,TV Länggasse Bern,SUI,22.12.1987,CS 10'000m et 3'000m steeple,Delémont,05.05.2018,10000,H
-33:31.53,D,Pierre Fournier,Stade Lausanne Athlétisme,SUI,13.08.1985,35th International Runners Decathlon,Winterlingen,13.05.2018,10000,H
-33:43.24,6,Ulisses Joos,BTV Chur Leichtathletik,SUI,17.08.1985,CS 10'000m et 3'000m steeple,Delémont,05.05.2018,10000,H
-34:31.91,7,Michael Morand,FSG Bassecourt,SUI,18.11.1983,CS 10'000m et 3'000m steeple,Delémont,05.05.2018,10000,H
-34:39.48,8,Damien Colas,FSG Bassecourt,FRA,10.01.1987,CS 10'000m et 3'000m steeple,Delémont,05.05.2018,10000,H
-34:54.51,9,Jean-Pierre Theytaz,CA Sierre DSG,SUI,20.05.1983,CS 10'000m et 3'000m steeple,Delémont,05.05.2018,10000,H
-35:29.50,10,Dave Derigo,GAB Bellinzona,SUI,08.03.1997,CS 10'000m et 3'000m steeple,Delémont,05.05.2018,10000,H
-36:39.54,4,Njaal Aase,LC Rafzerfeld,SUI,21.11.2001,Vorarlberger Meisterschaft 10000m,Lustenau,30.08.2018,10000,H
-36:47.00,21,Toto Notari,FG Malcantone,SUI,23.09.1981,CT giovanili di staffette,Locarno,21.04.2018,10000,H
-39:34.24,31,Luca Foglia,VIRTUS Locarno,SUI,13.04.1962,CT giovanili di staffette,Locarno,21.04.2018,10000,H
-40:16.21,D,Cédric Bouele,Delémont Athlétisme,SUI,08.11.1985,35th International Runners Decathlon,Winterlingen,13.05.2018,10000,H
-42:07.31,D,Ueli Küttel,LC Luzern,SUI,14.02.1986,35th International Runners Decathlon,Winterlingen,13.05.2018,10000,H
+27:17.29,9,Julien Wanders,Stade Genève,SUI,18.03.1996,Ethiopian Trials,"Hengelo, NED",17.07.2019,10000,H
+29:34.95,14B,Eric Rüttimann,LC Uster,SUI,07.12.1992,European 10'000m Cup,London; GBR,06.07.2019,10000,H
+29:41.66,18B,Sullivan Brunet,Stade Genève,SUI,06.03.1988,European 10'000m Cup,London; GBR,06.07.2019,10000,H
+30:07.77,3r1,Lukas Marti,TV Länggasse Bern,SUI,22.12.1987,SM 10000m/Steeple,Thun,15.06.2019,10000,H
+30:15.53,4r1,Neil Burton,LC Basel,GBR,21.11.1982,SM 10000m/Steeple,Thun,15.06.2019,10000,H
+30:26.51,5r1,Fabian Kuert,LV Langenthal,SUI,03.09.1983,SM 10000m/Steeple,Thun,15.06.2019,10000,H
+30:46.02,28B,Patrik Wägeli,LC Frauenfeld,SUI,01.01.1991,European 10'000m Cup,London; GBR,06.07.2019,10000,H
+31:22.31,9f,Florian Lussy,LA Nidwalden,SUI,15.01.1994,Conference USA Outdoor Championships,"Charlotte, USA",09.05.2019,10000,H
+32:17.00,1,Ricardo Pinto,Stade Genève,SUI,26.03.1987,Soirée Piste Chassieu,Lyon,27.09.2019,10000,H
+33:10.00,7r1,Marius Keller,BTV Aarau Athletics,SUI,30.01.1995,SM 10000m/Steeple,Thun,15.06.2019,10000,H
+33:48.38,8r1,Damien Colas,FSG Bassecourt,FRA,10.01.1987,SM 10000m/Steeple,Thun,15.06.2019,10000,H
+34:16.93,9r1,Charlie Hofmann,FSG Bassecourt,SUI,01.07.1993,SM 10000m/Steeple,Thun,15.06.2019,10000,H
+35:13.66,10r1,Hansjörg Brücker,Vom Stein Baden,SUI,16.11.1963,SM 10000m/Steeple,Thun,15.06.2019,10000,H
+35:32.77,11r1,Aron Gebrezgabiher,FSG Bassecourt,ERI,26.01.1997,SM 10000m/Steeple,Thun,15.06.2019,10000,H
+37:51.75,12r1,Francisco Taboada,FSG Bassecourt,SUI,19.03.1976,SM 10000m/Steeple,Thun,15.06.2019,10000,H
+37:58.52,81,Toto Notari,FG Malcantone,SUI,23.09.1981,Graded Meeting 3,"Dublin, IRL",29.05.2019,10000,H
 29:17.70,4 2,Tadesse Abraham,LC Uster,SUI,12.08.1982,SM 10'000m/Steeple // UsterRunning,Uster,26.06.2020,10000,H
 29:27.36,52,Andrea Salvisberg,LC Regensdorf,SUI,01.02.1989,SM 10'000m/Steeple // UsterRunning,Uster,26.06.2020,10000,H
 29:30.80,6 2,Dominik Rolli,STB Leichtathletik,SUI,19.02.1996,SM 10'000m/Steeple // UsterRunning,Uster,26.06.2020,10000,H

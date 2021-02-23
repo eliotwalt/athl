@@ -53,8 +53,8 @@ class ChScraper:
         self.submit_button = submit_button
         self.dest = dest
 
-        self.sleep_time = 0.15
-        self.max_retries = 7
+        self.sleep_time = 0.8
+        self.max_retries = 100
 
         driver_path = os.path.join('.', driver_path)
 
